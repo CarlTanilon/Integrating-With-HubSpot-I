@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    form(method="POST", action="/update-cobj")
+      div
+        label(for="name") Name:
+        input(type="text", name="name", required)
+      div
+        label(for="powerLevel") Power Level:
+        input(type="number", name="powerLevel", required)
+      div
+        label(for="bio") Bio:
+        textarea(name="bio", required)
+      div
+        button(type="submit") Submit
+    br
+    a(href="/") Return to the homepage

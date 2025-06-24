@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    a(href="/update-cobj") Add to this table
+    table
+      thead
+        tr
+          th Name
+          th Power Level
+          th Bio
+      tbody
+        each record in records
+          tr
+            td= record.properties.name
+            td= record.properties.powerLevel
+            td= record.properties.bio
