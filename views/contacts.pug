@@ -1,13 +1,20 @@
 doctype html
-html 
-    head 
-        title= `${title}`
-        meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet", href="/css/style.css")
-    body    
-        h1 Contacts
-        .cards 
-            each contact in data
-                .card 
-                    h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-                    p.card__email #{contact.properties.email}
+html
+  head
+    title Contacts List
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 HubSpot Contacts
+    a(href="/") Return to homepage
+    table
+      thead
+        tr
+          th First Name
+          th Last Name
+          th Email
+      tbody
+        each contact in contacts
+          tr
+            td= contact.properties.firstname
+            td= contact.properties.lastname
+            td= contact.properties.email
